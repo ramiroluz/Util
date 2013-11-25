@@ -257,6 +257,80 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Ficha catalografica
+\providecommand{\UTFPRfichacatpumdata}{}
+\newcommand{\fichacatpum}[1]{\renewcommand{\UTFPRfichacatpumdata}{#1}}
+\providecommand{\UTFPRfichacatautordata}{}
+\newcommand{\fichacatautor}[1]{\renewcommand{\UTFPRfichacatautordata}{#1}}
+\providecommand{\UTFPRfichacatpgbibdata}{}
+\newcommand{\fichacatpgbib}[1]{\renewcommand{\UTFPRfichacatpgbibdata}{#1}}
+\providecommand{\UTFPRfichacatpalchadata}{}
+\newcommand{\fichacatpalcha}[1]{\renewcommand{\UTFPRfichacatpalchadata}{#1}}
+\providecommand{\UTFPRfichacatpdoisdata}{}
+\newcommand{\fichacatpdois}[1]{\renewcommand{\UTFPRfichacatpdoisdata}{#1}}
+\providecommand{\UTFPRfichacatbibdata}{}
+\newcommand{\fichacatbib}[1]{\renewcommand{\UTFPRfichacatbibdata}{#1}}
+
+\newcommand{\fichacat}
+{
+  %% \hspace{8em}
+  \newcommand{\lenauthor}{\hspace{8px}}
+  \newcommand{\lencore}{\hspace{8px}}
+  \thispagestyle{empty}
+  {
+    \footnotesize{
+      \vspace*{12.8cm}
+      \begin{center}
+        \begin{tabular}{c}
+          {
+            Dados Internacionais de Cataloga\c{c}\~{a}o na Publica\c{c}\~{a}o
+          }
+        \end{tabular}
+      \end{center}
+    }
+    \vspace{-45px}
+    %% line
+    \begin{center}
+      \line(1,0){385}
+    \end{center}
+    \vspace{-15px}
+
+    \begin{table}[h!]
+      %% \setlength{\extrarowheight}{5px}
+      \begin{center}
+        \scriptsize{
+          \begin{tabular}{lp{12cm}}
+            %% personal data
+            \UTFPRfichacatpumdata \lenauthor & \UTFPRfichacatautordata \\
+            \lenauthor & \hspace{12px} \ABNTtitulodata / \ABNTautordata. -- \the\year. \\
+            & \lencore \pageref{LastPage} f. : il. ; 30 cm \\
+            & \\
+            & \lencore Orientador: \ABNTorientadordata. \\
+            & \lencore \UTFPRdocumentodata $\;$(\UTFPRniveldata) -- \ABNTinstituicaodata. \UTFPRprogramadata.  \ABNTlocaldata, \the\year. \\
+            & \lencore Bibliografia: f. \UTFPRfichacatpgbibdata. \\
+            & \\
+            & \lencore \UTFPRfichacatpalchadata \\
+            & \\
+            & \\
+            & \hfill \UTFPRfichacatpdoisdata \\
+            %% eof personal data
+          \end{tabular}
+        }
+      \end{center}
+    \end{table}
+    \vspace{-50px}
+
+    \begin{center}
+      \line(1,0){385}
+    \end{center}
+
+    \vspace{-40px}
+    \center \footnotesize \UTFPRfichacatbibdata
+    \newpage
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   DEDICATORIA  
 
 \newenvironment{dedicatoria}%
